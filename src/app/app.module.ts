@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { TimerPageComponent } from './timer-page/timer-page.component';
 import { ResultsPageComponent } from './results-page/results-page.component';
 import { HistoryPageComponent } from './history-page/history-page.component';
+import { RecordsService } from './records.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { HistoryPageComponent } from './history-page/history-page.component';
     HistoryPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  providers: [RecordsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

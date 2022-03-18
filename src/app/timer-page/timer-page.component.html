@@ -1,1 +1,14 @@
-<p>timer-page works!</p>
+<div class="row pt-4">
+  <div class="col-12-xs">
+    <h2>Timer</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="sw-container">
+    <div class="stopwatch h3">{{ hr }} : {{ min }} :{{ sec }} : {{ ms }}</div>
+    <div class="buttons-container">
+      <button class="btn btn-primary m-1" (click)="start()">Start</button>
+      <button class="btn btn-secondary m-1" (click)="reset()">reset</button>
+    </div>
+  </div>
+</div>
