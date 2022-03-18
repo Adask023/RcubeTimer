@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Record } from '../record.model';
+import { RecordsService } from '../records.service';
 
 @Component({
   selector: 'app-timer-page',
@@ -7,7 +8,7 @@ import { Record } from '../record.model';
   styleUrls: ['./timer-page.component.css'],
 })
 export class TimerPageComponent implements OnInit {
-  constructor() {}
+  constructor(private recordsService: RecordsService) {}
 
   ngOnInit(): void {}
 
@@ -66,8 +67,10 @@ export class TimerPageComponent implements OnInit {
 
   saveData(): void {
     let fullTime = `${this.hr} : ${this.min} : ${this.sec} : ${this.ms}`;
-    let m1 = new Record(this.msTotal, fullTime, new Date());
 
-    console.log(m1);
+    this.recordsService.addRecord(
+      new Record(this.msTotal, fullTime, new Date())
+    );
+    // console.log(m1);
   }
 }

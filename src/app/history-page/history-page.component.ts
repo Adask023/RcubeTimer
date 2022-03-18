@@ -8,7 +8,7 @@ import { RecordsService } from '../records.service';
   styleUrls: ['./history-page.component.css'],
 })
 export class HistoryPageComponent implements OnInit {
-  historyList: Record[];
+  historyList: Record[] = [];
 
   constructor(private recordsService: RecordsService) {}
 

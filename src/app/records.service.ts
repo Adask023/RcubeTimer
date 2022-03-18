@@ -13,5 +13,6 @@ export class RecordsService {
 
   addRecord(newRecord: Record) {
     this.records.push(newRecord);
+    console.log(this.records);
   }
 }
