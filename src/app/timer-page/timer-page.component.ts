@@ -66,11 +66,12 @@ export class TimerPageComponent implements OnInit {
   }
 
   saveData(): void {
-    let fullTime = `${this.hr} : ${this.min} : ${this.sec} : ${this.ms}`;
+    let fullTime = `${this.hr != 0 ? this.hr + ':' : ''} ${
+      this.min != 0 ? this.min + ':' : ''
+    }  ${this.sec}.${this.ms}`;
 
     this.recordsService.addRecord(
       new Record(this.msTotal, fullTime, new Date())
     );
-    // console.log(m1);
   }
 }

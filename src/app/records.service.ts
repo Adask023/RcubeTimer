@@ -1,14 +1,18 @@
 import { Record } from './record.model';
 
 export class RecordsService {
-  private records = [
-    new Record(1111, 'test', new Date()),
-    new Record(2222, 'test', new Date()),
-    new Record(3333, 'test', new Date()),
-  ];
+  private records: Record[] = [];
 
   getRecords() {
     return this.records.slice();
+  }
+
+  getSortedRecords() {
+    let sorted = this.records.sort(function (a, b) {
+      return a.msTotal - b.msTotal;
+    });
+
+    return sorted.slice();
   }
 
   addRecord(newRecord: Record) {

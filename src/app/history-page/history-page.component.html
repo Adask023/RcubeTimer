@@ -1,1 +1,25 @@
-<p>history-page works!</p>
+<h2 class="mt-4">History</h2>
+
+<div class="p-2">
+  <table *ngIf="historyList.length > 0; else historyTemplate" class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Time</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let historyListItem of historyList; let i = index">
+        <th scope="row">{{ i }}</th>
+        <td>{{ historyListItem.fullTime }}</td>
+        <td>{{ historyListItem.date.toDateString() }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #historyTemplate>
+    <div>No history records</div>
+  </ng-template>
+</div>
