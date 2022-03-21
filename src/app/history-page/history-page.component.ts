@@ -15,4 +15,10 @@ export class HistoryPageComponent implements OnInit {
   ngOnInit(): void {
     this.historyList = this.recordsService.getRecords();
   }
+
+  historyReset() {
+    this.recordsService.setRecords([]);
+    this.historyList = [];
+    localStorage.removeItem('Records');
+  }
 }

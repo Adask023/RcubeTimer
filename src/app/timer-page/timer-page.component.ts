@@ -12,6 +12,8 @@ export class TimerPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  public name = '';
+
   msTotal: number = 0;
   ms: any = '0' + 0;
   sec: any = '0' + 0;
@@ -71,7 +73,7 @@ export class TimerPageComponent implements OnInit {
     }  ${this.sec}.${this.ms}`;
 
     this.recordsService.addRecord(
-      new Record(this.msTotal, fullTime, new Date())
+      new Record(this.name, this.msTotal, fullTime, new Date().toDateString())
     );
   }
 }

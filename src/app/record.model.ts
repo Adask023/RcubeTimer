@@ -1,9 +1,11 @@
 export class Record {
+  public name: string;
   public msTotal: number;
   public fullTime: string;
-  public date: Date;
+  public date: any;
 
-  constructor(msTotal: number, fullTime: string, date: Date) {
+  constructor(name: string, msTotal: number, fullTime: string, date: any) {
+    this.name = name;
     this.msTotal = msTotal;
     this.fullTime = fullTime;
     this.date = date;

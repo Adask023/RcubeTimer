@@ -1,1 +1,9 @@
-<p>results-page works!</p>
+<h2 class="mt-4 mb-4">History</h2>
+<div class="cols-sm-12" *ngIf="sortedHistoryList.length > 0">
+  All time best:
+  <h4>{{ sortedHistoryList[0].fullTime }}</h4>
+</div>
+
+<app-input-form (changeModeEvent)="changeMode($event)"></app-input-form>
+
+<app-results-table [mode]="selectMode"></app-results-table>

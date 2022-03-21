@@ -1,0 +1,27 @@
+<div class="pt-4">
+  <div class="col-sm-12">
+    <table *ngIf="recordsToShow.length > 2" class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Time</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let historyListItem of recordsToShow; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ historyListItem.name }}</td>
+          <td>{{ historyListItem.fullTime }}</td>
+          <td>{{ historyListItem.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #historyTemplate>
+    <div>not available</div>
+  </ng-template>
+</div>
